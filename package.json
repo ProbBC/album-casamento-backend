@@ -1,0 +1,44 @@
+{
+  "name": "uploadimg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "18"
+  },
+  "author": {
+    "name": "FREDERICO FERREIRA"
+  },
+  "scripts": {
+    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && tsx watch src/index.ts --openssl-legacy-provider",
+    "build": "tsup src",
+    "start": "node dist/index.js",
+    "load": "tsx script/convert.to.image.ts",
+    "jest": "jest --runInBand --detectOpenHandles --forceExit",
+    "test:unit": "pnpm jest --projects tests/unit -c tests/unit/jest.config.ts",
+    "test:integration": "pnpm jest --projects tests/integration -c tests/integration/jest.config.ts",
+    "test": "pnpm test:unit && pnpm test:integration"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "googleapis": "^134.0.0",
+    "mongoose": "^8.7.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.12",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
